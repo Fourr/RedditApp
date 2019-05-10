@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD97BA9D2284FF0E007F23E1 /* NetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BA9C2284FF0E007F23E1 /* NetWorking.swift */; };
+		AD97BA9F2284FFEE007F23E1 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BA9E2284FFEE007F23E1 /* Object.swift */; };
 		ADBA15EE2281035200B06C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA15ED2281035200B06C54 /* AppDelegate.swift */; };
 		ADBA15F02281035200B06C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA15EF2281035200B06C54 /* ViewController.swift */; };
 		ADBA15F32281035200B06C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADBA15F12281035200B06C54 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD97BA9C2284FF0E007F23E1 /* NetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorking.swift; sourceTree = "<group>"; };
+		AD97BA9E2284FFEE007F23E1 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		ADBA15EA2281035200B06C54 /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBA15ED2281035200B06C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADBA15EF2281035200B06C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				ADBA15ED2281035200B06C54 /* AppDelegate.swift */,
 				ADBA15EF2281035200B06C54 /* ViewController.swift */,
+				AD97BA9C2284FF0E007F23E1 /* NetWorking.swift */,
+				AD97BA9E2284FFEE007F23E1 /* Object.swift */,
 				ADBA15F12281035200B06C54 /* Main.storyboard */,
 				ADBA15F42281035400B06C54 /* Assets.xcassets */,
 				ADBA15F62281035400B06C54 /* LaunchScreen.storyboard */,
@@ -137,6 +143,8 @@
 			files = (
 				ADBA15F02281035200B06C54 /* ViewController.swift in Sources */,
 				ADBA15EE2281035200B06C54 /* AppDelegate.swift in Sources */,
+				AD97BA9F2284FFEE007F23E1 /* Object.swift in Sources */,
+				AD97BA9D2284FF0E007F23E1 /* NetWorking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
