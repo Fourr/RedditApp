@@ -17,55 +17,46 @@ class Network {
     
     var dataTask: URLSessionDataTask?
     
-    typealias QueryResult = ([Reddit]?, String) -> ()
-    typealias JSONDictionary = [String: Any]
     
     func callRedditAPI() {
-
-        dataTask?.cancel()
-
-        if var urlComponents = URLComponents(string: "https://www.reddit.com/api/v1/authorize") {
-            urlComponents.query = "client_id=qgMRqMJ8IHLJ_A&response_type=code&state=CylXIShfbC&redirect_uri=http://localhost:8080&duration=permanent&scope=read"
+       
+        let string = "https://www.reddit.com/api/v1/access_token"
+        let username = "qgMRqMJ8IHLJ_A:"
         
-            guard let url = urlComponents.url else { return }
-            dataTask = defaultSession.dataTask(with: url) { data, response, error in
-                defer { self.dataTask = nil }
-            
-                if let error = error {
-                    self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                } else if let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    self.updateSearchResults(data)
-                    DispatchQueue.main.async {
-                        //completion(Reddit, self.errorMessage)
-                    }
-                }
+        
+        let url = NSURL(string: string)
+        let request = NSMutableURLRequest(url: url! as URL)
+        
+        let loginData = username.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+        //let base64BodyString = bodyData.base64EncodedString()
+        
+        let grant_type =  "https://oauth.reddit.com/grants/installed_client"
+        let device_id = "DO_NOT_TRACK_THIS_DEVICE"
+        let postString = "grant_type=\(grant_type)&device_id=\(device_id)" // which is your parameters
+        //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        request.httpBody = postString.data(using: .utf8)
+
+        //request.httpBody = data
+        
+        print(request.allHTTPHeaderFields!)
+        //print(request.httpBody!)
+        
+        let session = URLSession.shared
+        
+        let mData = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
+            if let res = response as? HTTPURLResponse {
+                print("res: \(String(describing: res))")
+                print("Response: \(String(describing: response))")
+            } else {
+                print("Error: \(String(describing: error))")
             }
-        
-            dataTask?.resume()
         }
+        mData.resume()
+
     }
-    fileprivate func updateSearchResults(_ data: Data) {
-        var response: JSONDictionary?
-        results.removeAll()
-        //print(data)
-        do {
-            response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
-        } catch let parseError as NSError {
-            errorMessage += "JSONSerialization error: \(parseError.localizedDescription)\n"
-            print(parseError.localizedDescription)
-            return
-        }
-        
-        guard let array = response!["results"] as? [Any] else {
-            errorMessage += "Dictionary does not contain results key\n"
-            print("error message two")
-            return
-        }
-        print(response)
-        print(array)
-    }
+
+
 }
-
-
