@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let test = Network()
+    let test = NetworkingService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        test.callRedditAPI()
+
+        test.authenticate { success in
+            print(success)
+        }
     }
 
 
