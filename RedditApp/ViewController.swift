@@ -9,12 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let test = NetworkingService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        test.authenticate { success in
-            print(success)
+        DispatchQueue.global(qos: .userInitiated).async {
+            let NS = NetworkingService()
+            NS.authenticate { success in
+                print(success)
+                
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let NS = NetworkingService()
+            NS.getComments { success in
+                print(success)
+            }
         }
     }
 

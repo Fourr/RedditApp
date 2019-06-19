@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0005442296474F00F58002 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0005432296474F00F58002 /* AccessToken.swift */; };
 		AD97BA9D2284FF0E007F23E1 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BA9C2284FF0E007F23E1 /* NetworkingService.swift */; };
-		AD97BA9F2284FFEE007F23E1 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BA9E2284FFEE007F23E1 /* Object.swift */; };
 		ADBA15EE2281035200B06C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA15ED2281035200B06C54 /* AppDelegate.swift */; };
 		ADBA15F02281035200B06C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA15EF2281035200B06C54 /* ViewController.swift */; };
 		ADBA15F32281035200B06C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADBA15F12281035200B06C54 /* Main.storyboard */; };
 		ADBA15F52281035400B06C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADBA15F42281035400B06C54 /* Assets.xcassets */; };
 		ADBA15F82281035400B06C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADBA15F62281035400B06C54 /* LaunchScreen.storyboard */; };
+		ADBB583422B834990070D960 /* SubredditThreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB583322B834990070D960 /* SubredditThreads.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD0005432296474F00F58002 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		AD97BA9C2284FF0E007F23E1 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
-		AD97BA9E2284FFEE007F23E1 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		ADBA15EA2281035200B06C54 /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBA15ED2281035200B06C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADBA15EF2281035200B06C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +27,7 @@
 		ADBA15F42281035400B06C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADBA15F72281035400B06C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADBA15F92281035400B06C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADBB583322B834990070D960 /* SubredditThreads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditThreads.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				ADBA15ED2281035200B06C54 /* AppDelegate.swift */,
+				ADBB583322B834990070D960 /* SubredditThreads.swift */,
 				ADBA15EF2281035200B06C54 /* ViewController.swift */,
 				AD97BA9C2284FF0E007F23E1 /* NetworkingService.swift */,
-				AD97BA9E2284FFEE007F23E1 /* Object.swift */,
+				AD0005432296474F00F58002 /* AccessToken.swift */,
 				ADBA15F12281035200B06C54 /* Main.storyboard */,
 				ADBA15F42281035400B06C54 /* Assets.xcassets */,
 				ADBA15F62281035400B06C54 /* LaunchScreen.storyboard */,
@@ -143,8 +146,9 @@
 			files = (
 				ADBA15F02281035200B06C54 /* ViewController.swift in Sources */,
 				ADBA15EE2281035200B06C54 /* AppDelegate.swift in Sources */,
-				AD97BA9F2284FFEE007F23E1 /* Object.swift in Sources */,
+				ADBB583422B834990070D960 /* SubredditThreads.swift in Sources */,
 				AD97BA9D2284FF0E007F23E1 /* NetworkingService.swift in Sources */,
+				AD0005442296474F00F58002 /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 55FS74UE25;
 				INFOPLIST_FILE = RedditApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,7 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 55FS74UE25;
 				INFOPLIST_FILE = RedditApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
