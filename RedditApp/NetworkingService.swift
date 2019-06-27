@@ -20,9 +20,6 @@ final class NetworkingService {
     
     var errorMessage = ""
     
-    private var dataTask: URLSessionDataTask?
-    private var dataTask2: URLSessionDataTask?
-    
     func authenticate(completion: @escaping (Bool) -> ()) {
         let accessTokenURL = "https://www.reddit.com/api/v1/access_token"
         
@@ -44,7 +41,7 @@ final class NetworkingService {
         request.httpMethod = "POST"
         request.httpBody = postString.data(using: .utf8)
         
-        dataTask = defaultSession.dataTask(with: request) { data, response, error in
+        let dataTask = defaultSession.dataTask(with: request) { data, response, error in
             
             guard error == nil,
                 let data = data else {
@@ -66,53 +63,46 @@ final class NetworkingService {
             completion(true)
         }
 
-        dataTask?.resume()
+        dataTask.resume()
     }
     
-    func getSubbReddit(completion: @escaping (Bool) -> ()) {
+    func fetchThread(completion: @escaping (Result<Thread, Error>) -> ()) {
         let subredditURL = "https://oauth.reddit.com/r/smashbros"
         
         guard let url = URL(string: subredditURL) else {
-            completion(false)
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
         var request = URLRequest(url: url)
        
-        let access = UserDefaults.standard.object(forKey:"token") as? String ?? String()
+        guard let access = UserDefaults.standard.object(forKey:"token") as? String else {
+            completion(.failure(NetworkError.invalidAccessToken))
+            return
+        }
 
         request.setValue("bearer \(access)", forHTTPHeaderField: "Authorization")
         
         request.httpMethod = "GET"
         
-        dataTask = defaultSession.dataTask(with: request) { data, response, error in
-            guard error == nil,
-                let data = data else {
-                    completion(false)
-                    return
+        let dataTask = defaultSession.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data,
+                let thread = try? JSONDecoder().decode(Thread.self, from: data) else {
+                completion(.failure(NetworkError.invalidData))
+                return
             }
             
-            self.getSubredditThreads(data: data)
-            completion(true)
+            //data.printAsJSON()
+            completion(.success(thread))
         }
-        dataTask?.resume()
+        dataTask.resume()
     }
-    func getSubredditThreads(data: Data){//-> [SubredditThreads] {
-        guard let thread = try? JSONDecoder().decode(SubredditThreads.self, from: data) else {
-            print("Error: Couldn't decode data into thread")
-            return
-        }
-        //print(thread)
-        for threads in thread.data.children {
-            print("\n")
-            print("Title: \(threads.data.title)")
-            print("URL: \(threads.data.url)")
-            print("Permalink: \(threads.data.permalink)")
-            
-        }
-
-    }
-    func getComments(completion: @escaping (Bool) -> ()) {
+    
+    func getCommentsNetwork(completion: @escaping (Bool) -> ()) {
         let commentURL = "https://oauth.reddit.com/r/smashbros/comments/c1k3cr/"
         
         guard let url = URL(string: commentURL) else {
@@ -127,24 +117,30 @@ final class NetworkingService {
         request.setValue("bearer \(access)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
-        dataTask = defaultSession.dataTask(with: request) { data, response, error in
+        let dataTask = defaultSession.dataTask(with: request) { data, response, error in
             guard error == nil,
                 let data = data else {
                     completion(false)
                     return
             }
-            let string1 = String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-            print(string1)
-            guard let json = (try? JSONSerialization.jsonObject(with: data,
-                                                                options: .allowFragments)) as? [String: Any] else {
-                                                                    completion(false)
-                                                                    return
-            }
-            print(json)
-            //self.getSubredditThreads(data: data)
+            //let string1 = String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+            //print(string1)
+            
+            self.getThreadComments(data: data)
+
             completion(true)
         }
-        dataTask?.resume()
+        dataTask.resume()
     }
+    
+    
+    func getThreadComments(data: Data){
+        guard let comments = try? JSONDecoder().decode(SubRedditComment.self, from: data) else {
+            print("Error: Couldn't decode data into comments")
+            return
+        }
+        print(comments)
+    }
+    
     
 }
