@@ -102,45 +102,43 @@ final class NetworkingService {
         dataTask.resume()
     }
     
-    func getCommentsNetwork(completion: @escaping (Bool) -> ()) {
-        let commentURL = "https://oauth.reddit.com/r/smashbros/comments/c1k3cr/"
-        
-        guard let url = URL(string: commentURL) else {
-            completion(false)
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        
-        let access = UserDefaults.standard.object(forKey:"token") as? String ?? String()
-        
-        request.setValue("bearer \(access)", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
-        
-        let dataTask = defaultSession.dataTask(with: request) { data, response, error in
-            guard error == nil,
-                let data = data else {
-                    completion(false)
-                    return
-            }
-            //let string1 = String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-            //print(string1)
-            
-            self.getThreadComments(data: data)
-
-            completion(true)
-        }
-        dataTask.resume()
-    }
-    
-    
-    func getThreadComments(data: Data){
-        guard let comments = try? JSONDecoder().decode(SubRedditComment.self, from: data) else {
-            print("Error: Couldn't decode data into comments")
-            return
-        }
-        print(comments)
-    }
-    
-    
+//    func getCommentsNetwork(completion: @escaping (Bool) -> ()) {
+//        let commentURL = "https://oauth.reddit.com/r/smashbros/comments/c1k3cr/"
+//
+//        guard let url = URL(string: commentURL) else {
+//            completion(false)
+//            return
+//        }
+//
+//        var request = URLRequest(url: url)
+//
+//        let access = UserDefaults.standard.object(forKey:"token") as? String ?? String()
+//        
+//        request.setValue("bearer \(access)", forHTTPHeaderField: "Authorization")
+//        request.httpMethod = "GET"
+//
+//        let dataTask = defaultSession.dataTask(with: request) { data, response, error in
+//            guard error == nil,
+//                let data = data else {
+//                    completion(false)
+//                    return
+//            }
+//            //let string1 = String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+//            //print(string1)
+//
+//            self.getThreadComments(data: data)
+//
+//            completion(true)
+//        }
+//        dataTask.resume()
+//    }
+//
+//
+//    func getThreadComments(data: Data){
+//        guard let comments = try? JSONDecoder().decode(SubRedditComment.self, from: data) else {
+//            print("Error: Couldn't decode data into comments")
+//            return
+//        }
+//        print(comments)
+//    }
 }

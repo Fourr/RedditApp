@@ -10,52 +10,56 @@ import Foundation
 import UIKit
 
 final class ThreadCollectionViewManager: NSObject, UICollectionViewDelegate {
-    // create variable to hold cell view models
-    // What the variable is set, reload the collectionView
+    
+    var cellViewModels = [ListingCellViewModel]() {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
+    
+    private weak var collectionView: UICollectionView?
     
     func configure(collectionView: UICollectionView) {
-        // register listing cell with collection view
-        // set delegate and datasource
+        self.collectionView = collectionView
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
-    
 }
-/*
+
 extension ThreadCollectionViewManager: UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return people.count
+        return cellViewModels.count
     }
-//    func numberOfRowsInSection -> Int {
-//        // RETURN # OF CELL VIEW MODELS
-//    }
-    
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ListingCollectionViewCell.self), for: indexPath) as? ListingCollectionViewCell else {
+            fatalError("Unable to dequeue a ListingCell.")
+        }
+        
+        let cellViewModel = cellViewModels[indexPath.item]
+        
+        cellViewModel.configure(cell: cell)
         
         return cell
     }
-//    func cellForItem() -> UICollectionViewCell {
-//        // dequeue cell from collectionView
-//        // configure cell using cell view model configure method
-//        // return cell
-//    }
 }
 
-extension ThreadCollectionViewManager: UICollectionViewFlowLayoutDelegate {
+extension ThreadCollectionViewManager: UICollectionViewDelegateFlowLayout {
     func spaceVertically() {
-        
+
     }
-    
+
     func spaceHorizontally() {
-        
+
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+            return CGSize(width: 300, height: 200)
     }
- 
+
 }
-*/
+

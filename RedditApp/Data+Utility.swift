@@ -14,8 +14,6 @@ extension Data {
             self, options: [])) as? [String: Any] else {
                 return
         }
-        
         print(json)
     }
 }
-

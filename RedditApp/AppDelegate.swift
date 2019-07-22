@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.removeObject(forKey: "token")
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        window.rootViewController = ViewController()
+        window.rootViewController = ThreadViewController()
         window.makeKeyAndVisible()
         return true
     }

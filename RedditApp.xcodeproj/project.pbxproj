@@ -18,7 +18,6 @@
 		ADBA15F02281035200B06C54 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA15EF2281035200B06C54 /* ThreadViewController.swift */; };
 		ADBA15F52281035400B06C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADBA15F42281035400B06C54 /* Assets.xcassets */; };
 		ADBA15F82281035400B06C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADBA15F62281035400B06C54 /* LaunchScreen.storyboard */; };
-		ADBB583622BBE4910070D960 /* SubredditComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB583522BBE4910070D960 /* SubredditComments.swift */; };
 		ADBB585822C3D0C20070D960 /* ThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB585722C3D0C20070D960 /* ThreadViewModel.swift */; };
 		ADBB585C22C3D3EA0070D960 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB585B22C3D3EA0070D960 /* NetworkError.swift */; };
 		ADBB585E22C3D8DD0070D960 /* Data+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB585D22C3D8DD0070D960 /* Data+Utility.swift */; };
@@ -38,7 +37,6 @@
 		ADBA15F42281035400B06C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADBA15F72281035400B06C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADBA15F92281035400B06C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADBB583522BBE4910070D960 /* SubredditComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditComments.swift; sourceTree = "<group>"; };
 		ADBB585722C3D0C20070D960 /* ThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadViewModel.swift; sourceTree = "<group>"; };
 		ADBB585B22C3D3EA0070D960 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = ../NetworkError.swift; sourceTree = "<group>"; };
 		ADBB585D22C3D8DD0070D960 /* Data+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Utility.swift"; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				ADBA15ED2281035200B06C54 /* AppDelegate.swift */,
 				ADBB585B22C3D3EA0070D960 /* NetworkError.swift */,
 				AD1C22D222C553E200BC10C6 /* ListingCollectionViewCell.swift */,
-				ADBB583522BBE4910070D960 /* SubredditComments.swift */,
 				ADBA15EF2281035200B06C54 /* ThreadViewController.swift */,
 				AD1C22D422C57A7200BC10C6 /* Double+Utility.swift */,
 				ADBB585722C3D0C20070D960 /* ThreadViewModel.swift */,
@@ -172,7 +169,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADBB583622BBE4910070D960 /* SubredditComments.swift in Sources */,
 				AD714AA522C40AAE003C3BCC /* Thread.swift in Sources */,
 				ADBB585C22C3D3EA0070D960 /* NetworkError.swift in Sources */,
 				AD714AA322C3DF68003C3BCC /* Listing.swift in Sources */,

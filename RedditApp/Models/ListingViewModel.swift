@@ -17,17 +17,22 @@ struct ListingCellViewModel {
     }
     
     func configure(cell: ListingCollectionViewCell) {
-        // CONFIGURE CELL WITH PROPERTIES
-        cell.author = "/u/" + listing.author
-        //cell.createdAt = listing.createdAt
-        cell.numberOfComments = "\(listing.numberOfComments) comments"
-        if listing.thumbnail == "" {
-            
-        } else {
-            cell.thumbnail = listing.thumbnail
-        }
-        cell.title = listing.title
-        cell.ups =  listing.ups.formatNumber(Int(listing.ups))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+//        // CONFIGURE CELL WITH PROPERTIES
+        cell.authorLabel.text = "/u/" + listing.author
+        cell.numberOfComments.text = "\(listing.numberOfComments) comments"
+//        if listing.thumbnail == "" {
+//
+//        } else {
+//            cell.thumbnail = listing.thumbnail
+//        }
+        cell.titleLabel.text = listing.title
+        cell.ups.text =  listing.ups.formatNumber(Int(listing.ups))
+        cell.createdAt.text = dateFormatter.string(from: listing.createdAt)
+
     }
     
     // convert date to string

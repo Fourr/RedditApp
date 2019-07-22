@@ -53,8 +53,5 @@ struct Listing: Decodable {
         ups = try container.decode(Double.self, forKey: .ups)
         let utc = try container.decode(Int.self, forKey: .createdAt)
         createdAt = Date(timeIntervalSince1970: Double(utc))
-        
     }
-    
 }
-
