@@ -19,7 +19,7 @@ struct Listing: Decodable {
     
     let createdAt: Date
     
-    let numberOfComments: Int
+    let numberOfComments: Double
     let ups: Double
 
     
@@ -44,7 +44,7 @@ struct Listing: Decodable {
             .nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         
         descriptionText = try container.decode(String.self, forKey: .descriptionText)
-        numberOfComments = try container.decode(Int.self, forKey: .numberOfComments)
+        numberOfComments = try container.decode(Double.self, forKey: .numberOfComments)
         url = try container.decode(String.self, forKey: .url)
         thumbnail = try container.decode(String.self, forKey: .thumbnail)
         permalink = try container.decode(String.self, forKey: .permalink)

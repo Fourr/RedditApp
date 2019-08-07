@@ -36,8 +36,9 @@ final class ThreadViewModel {
     }
     
     func configure(collectionView: UICollectionView) {
-        collectionView.register(ListingCollectionViewCell.self,
-                                forCellWithReuseIdentifier: String(describing: ListingCollectionViewCell.self))
+        //collectionView.register(ListingCollectionViewCell.self,
+                                //forCellWithReuseIdentifier: String(describing: ListingCollectionViewCell.self))
+        collectionView.register(UINib(nibName: "ListingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: String(describing: ListingCollectionViewCell.self))
         collectionViewManager.configure(collectionView: collectionView)
     }
     

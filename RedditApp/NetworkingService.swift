@@ -96,7 +96,7 @@ final class NetworkingService {
                 return
             }
             
-            //data.printAsJSON()
+            data.printAsJSON()
             completion(.success(thread))
         }
         dataTask.resume()

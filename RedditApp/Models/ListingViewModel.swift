@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct ListingCellViewModel {
     private let listing: Listing
@@ -20,19 +20,24 @@ struct ListingCellViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "EST")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        cell.titleLabel.text = listing.title
 
 //        // CONFIGURE CELL WITH PROPERTIES
         cell.authorLabel.text = "/u/" + listing.author
-        cell.numberOfComments.text = "\(listing.numberOfComments) comments"
-//        if listing.thumbnail == "" {
-//
-//        } else {
-//            cell.thumbnail = listing.thumbnail
-//        }
-        cell.titleLabel.text = listing.title
-        cell.ups.text =  listing.ups.formatNumber(Int(listing.ups))
-        cell.createdAt.text = dateFormatter.string(from: listing.createdAt)
+        let comments = listing.numberOfComments.formatNumber(Int(listing.numberOfComments))
+        cell.numberOfCommentsLabel.text = "\(comments) comments"
+        cell.upsLabel.text =  listing.ups.formatNumber(Int(listing.ups))
+        cell.createdAtLabel.text = dateFormatter.string(from: listing.createdAt)
+        
+        if(listing.thumbnail != "") {
+            cell.thumbnailImage.downloaded(from: listing.thumbnail)
+        } 
+        
 
+    }
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
     // convert date to string

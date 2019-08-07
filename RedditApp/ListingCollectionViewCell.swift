@@ -11,50 +11,55 @@ import UIKit
 
 final class ListingCollectionViewCell: UICollectionViewCell {
     
-    let authorLabel: UILabel = {
-        let label = UILabel()
-        
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 16)
-        
-        return label
-    }()
+    @IBOutlet var titleLabel: UILabel!
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 16)
-        
-        return label
-    }()
+    @IBOutlet var authorLabel: UILabel!
     
-    let createdAt: UILabel = {
-        let label = UILabel()
-        
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 16)
-        
-        return label
-    }()
+    @IBOutlet var numberOfCommentsLabel: UILabel!
     
-    let numberOfComments: UILabel = {
-        let label = UILabel()
-        
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 16)
-        
-        return label
-    }()
+    @IBOutlet var upsLabel: UILabel!
     
-    let ups: UILabel = {
-        let label = UILabel()
-        
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 16)
-        
-        return label
-    }()
+    @IBOutlet var createdAtLabel: UILabel!
+    
+    @IBOutlet var thumbnailImage: UIImageView!
+    
+    
+    
+    //    let titleLabel: UILabel = {
+//        let label = UILabel()
+//        
+//        label.textColor = .black
+//        label.font = .systemFont(ofSize: 16)
+//        
+//        return label
+//    }()
+//    
+//    let createdAt: UILabel = {
+//        let label = UILabel()
+//        
+//        label.textColor = .black
+//        label.font = .systemFont(ofSize: 16)
+//        
+//        return label
+//    }()
+//    
+//    let numberOfComments: UILabel = {
+//        let label = UILabel()
+//        
+//        label.textColor = .black
+//        label.font = .systemFont(ofSize: 16)
+//        
+//        return label
+//    }()
+//    
+//    let ups: UILabel = {
+//        let label = UILabel()
+//        
+//        label.textColor = .black
+//        label.font = .systemFont(ofSize: 16)
+//        
+//        return label
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,25 +83,25 @@ final class ListingCollectionViewCell: UICollectionViewCell {
 //        authorLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         
         
-        var previous: UILabel?
+//       var previous: UILabel?
         
-        for label in [authorLabel, titleLabel, createdAt, numberOfComments, ups] {
-            label.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview(label)
-            label.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-            label.heightAnchor.constraint(equalToConstant: 20).isActive = true
-            
-            if let previous = previous {
-                // we have a previous label – create a height constraint
-                label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
-            } else {
-                // this is the first label
-                label.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-            }
-            
-            // set the previous label to be the current one, for the next loop iteration
-            previous = label
-        }
+//        for label in [authorLabel, titleLabel, createdAt, numberOfComments, ups] {
+//            label.translatesAutoresizingMaskIntoConstraints = false
+//            contentView.addSubview(label)
+//            label.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+//            label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+//            
+//            if let previous = previous {
+//                // we have a previous label – create a height constraint
+//                label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+//            } else {
+//                // this is the first label
+//                label.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+//            }
+//            
+//            // set the previous label to be the current one, for the next loop iteration
+//            previous = label
+//        }
     
     }
     
@@ -106,6 +111,9 @@ final class ListingCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        authorLabel.text = nil
+        titleLabel.text = nil
+        createdAtLabel.text = nil
+        numberOfCommentsLabel.text = nil
+        upsLabel.text = nil
     }
 }

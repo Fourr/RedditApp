@@ -24,7 +24,7 @@ final class ThreadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .blue
         configureCollectionView()
         viewModel.fetchThread()
     }
@@ -44,15 +44,3 @@ final class ThreadViewController: UIViewController {
     }
 }
 
-//final class ThreadViewController {
-//    private let viewModel = ThreadViewModel()
-//    private let titleLabel = UILabel()
-//    private let searchBar = UISearchBar()
-//
-//    private let refreshControl = UIRefreshControl()
-//    private let collectionView = UICollectionView()
-//
-//    func viewDidLoad() {
-//        viewModel.configure(collectionView: collectionView)
-//    }
-//}

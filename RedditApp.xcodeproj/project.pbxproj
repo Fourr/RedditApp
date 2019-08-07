@@ -11,6 +11,7 @@
 		AD1C22D122C553BB00BC10C6 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1C22D022C553BB00BC10C6 /* ListingViewModel.swift */; };
 		AD1C22D322C553E200BC10C6 /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1C22D222C553E200BC10C6 /* ListingCollectionViewCell.swift */; };
 		AD1C22D522C57A7300BC10C6 /* Double+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1C22D422C57A7200BC10C6 /* Double+Utility.swift */; };
+		AD28FA1F22E7DF4B00623DC8 /* ListingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD28FA1E22E7DF4B00623DC8 /* ListingCollectionViewCell.xib */; };
 		AD714AA322C3DF68003C3BCC /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD714AA222C3DF68003C3BCC /* Listing.swift */; };
 		AD714AA522C40AAE003C3BCC /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD714AA422C40AAE003C3BCC /* Thread.swift */; };
 		AD97BA9D2284FF0E007F23E1 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BA9C2284FF0E007F23E1 /* NetworkingService.swift */; };
@@ -21,6 +22,10 @@
 		ADBB585822C3D0C20070D960 /* ThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB585722C3D0C20070D960 /* ThreadViewModel.swift */; };
 		ADBB585C22C3D3EA0070D960 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB585B22C3D3EA0070D960 /* NetworkError.swift */; };
 		ADBB585E22C3D8DD0070D960 /* Data+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB585D22C3D8DD0070D960 /* Data+Utility.swift */; };
+		ADEDA49F22E7F458006439FF /* UIImageView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEDA49E22E7F458006439FF /* UIImageView+Utility.swift */; };
+		ADEDA4A322E7F652006439FF /* icons8-topic-50.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEDA4A122E7F652006439FF /* icons8-topic-50.png */; };
+		ADEDA4A422E7F652006439FF /* icons8-up-50.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEDA4A222E7F652006439FF /* icons8-up-50.png */; };
+		ADEDA4A622E7F863006439FF /* smashball.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADEDA4A522E7F863006439FF /* smashball.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,7 @@
 		AD1C22D022C553BB00BC10C6 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		AD1C22D222C553E200BC10C6 /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD1C22D422C57A7200BC10C6 /* Double+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Utility.swift"; sourceTree = "<group>"; };
+		AD28FA1E22E7DF4B00623DC8 /* ListingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingCollectionViewCell.xib; sourceTree = "<group>"; };
 		AD714AA222C3DF68003C3BCC /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		AD714AA422C40AAE003C3BCC /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		AD97BA9C2284FF0E007F23E1 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
@@ -40,6 +46,10 @@
 		ADBB585722C3D0C20070D960 /* ThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadViewModel.swift; sourceTree = "<group>"; };
 		ADBB585B22C3D3EA0070D960 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = ../NetworkError.swift; sourceTree = "<group>"; };
 		ADBB585D22C3D8DD0070D960 /* Data+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Utility.swift"; sourceTree = "<group>"; };
+		ADEDA49E22E7F458006439FF /* UIImageView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utility.swift"; sourceTree = "<group>"; };
+		ADEDA4A122E7F652006439FF /* icons8-topic-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-topic-50.png"; sourceTree = "<group>"; };
+		ADEDA4A222E7F652006439FF /* icons8-up-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-up-50.png"; sourceTree = "<group>"; };
+		ADEDA4A522E7F863006439FF /* smashball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smashball.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +99,27 @@
 				ADBA15EF2281035200B06C54 /* ThreadViewController.swift */,
 				AD1C22D422C57A7200BC10C6 /* Double+Utility.swift */,
 				ADBB585722C3D0C20070D960 /* ThreadViewModel.swift */,
+				AD28FA1E22E7DF4B00623DC8 /* ListingCollectionViewCell.xib */,
+				ADEDA4A022E7F62D006439FF /* Images */,
 				AD1C22CE22C4925200BC10C6 /* ThreadCollectionViewManager.swift */,
 				AD97BA9C2284FF0E007F23E1 /* NetworkingService.swift */,
 				ADBB585D22C3D8DD0070D960 /* Data+Utility.swift */,
+				ADEDA49E22E7F458006439FF /* UIImageView+Utility.swift */,
 				ADBA15F42281035400B06C54 /* Assets.xcassets */,
 				ADBA15F62281035400B06C54 /* LaunchScreen.storyboard */,
 				ADBA15F92281035400B06C54 /* Info.plist */,
 			);
 			path = RedditApp;
+			sourceTree = "<group>";
+		};
+		ADEDA4A022E7F62D006439FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ADEDA4A122E7F652006439FF /* icons8-topic-50.png */,
+				ADEDA4A522E7F863006439FF /* smashball.jpg */,
+				ADEDA4A222E7F652006439FF /* icons8-up-50.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +180,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADEDA4A322E7F652006439FF /* icons8-topic-50.png in Resources */,
+				ADEDA4A422E7F652006439FF /* icons8-up-50.png in Resources */,
 				ADBA15F82281035400B06C54 /* LaunchScreen.storyboard in Resources */,
+				AD28FA1F22E7DF4B00623DC8 /* ListingCollectionViewCell.xib in Resources */,
 				ADBA15F52281035400B06C54 /* Assets.xcassets in Resources */,
+				ADEDA4A622E7F863006439FF /* smashball.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +207,7 @@
 				AD1C22CF22C4925200BC10C6 /* ThreadCollectionViewManager.swift in Sources */,
 				ADBB585E22C3D8DD0070D960 /* Data+Utility.swift in Sources */,
 				ADBB585822C3D0C20070D960 /* ThreadViewModel.swift in Sources */,
+				ADEDA49F22E7F458006439FF /* UIImageView+Utility.swift in Sources */,
 				AD1C22D122C553BB00BC10C6 /* ListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
